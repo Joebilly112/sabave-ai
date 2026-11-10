@@ -12,7 +12,6 @@ STEP 0 — CLAIM NEXT IDEA (do this first, every run)
 Sources:
 1) Google Doc: documentId 10Vn05ZtE37XCLKSzmwjCP5iZwWmbUNHmASlFCP5Cx4M
    Tabs: Intro, Professionals, Students & Parents, Love & Relationships. Heading 2 site names are ideas (e.g. interviewdebrief.id → folder interviewdebrief).
-   Optional filled long prompts (local paste): documentId 1laiFvg5tSKXXERaDpWs-J4YCAHQPITa0xatM_gb7zec — one HEADING_1 per website.
 2) Backlog file in sabave-ai: site-factory/BACKLOG.md
    If missing, create it with a checklist of every Heading-2 product from Professionals + Students & Parents + Love & Relationships, format:
    - [ ] interviewdebrief
@@ -36,12 +35,15 @@ RUN INPUTS (filled AFTER claim — not hard-coded forever)
 PRODUCT_DOMAIN: <from doc, e.g. cvtolak.id>
 FOLDER_NAME: <domain without .id>
 PRODUCT_QUESTION / PRODUCT_EMOTION / UNLOCK_PRICE_IDR / INPUT_FIELDS / UNLOCK_OUTPUT / NICHE / BRAND_LOOK / RESEARCH_BRIEF: from the doc entry for that site
-REPO: sabave-ai
-APP_DIR: /FOLDER_NAME at repo root (or apps/FOLDER_NAME if apps/ layout already exists)
+REPO: sabave-ai (cloud checkout)
+APP_DIR (cloud): /FOLDER_NAME at sabave-ai repo root (or apps/FOLDER_NAME if apps/ layout already exists)
+LOCAL_DIR (Windows deploy): C:\FOLDER_NAME only — never C:\sabave-ai\FOLDER_NAME
 HOSTING_SITE_ID = FOLDER_NAME
 FIRESTORE_DATABASE_ID = FOLDER_NAME
 PRIMARY_PUBLIC_URL = https://FOLDER_NAME.web.app
 FIREBASE_PROJECT_ID = skoolnow-ea6ff
+HANDOFFS_DOC_ID = 1laiFvg5tSKXXERaDpWs-J4YCAHQPITa0xatM_gb7zec
+  (Google Doc “prompts” — LOCAL DEPLOY HANDOFFS only. Not build prompts.)
 
 ═══════════════════════════════════════
 HARD RULES
@@ -67,18 +69,26 @@ BUILD ORDER
 3. npm install && npm run build in APP_DIR (must pass).
 4. Mark complete in BOTH places (humans + future automations):
    a) site-factory/BACKLOG.md → `- [x] FOLDER_NAME` (date + cloud build finished).
-   b) Google Doc 10Vn05ZtE37XCLKSzmwjCP5iZwWmbUNHmASlFCP5Cx4M → on that product’s Heading 2 line (e.g. `cvtolak.id`), prefix a visible done marker humans can see, e.g. change `cvtolak.id` to `✅ cvtolak.id` (or append ` — DONE (site-factory)`). Do not delete research bullets. If Docs edit fails, report it but still finish the repo work.
+   b) Google Doc 10Vn05ZtE37XCLKSzmwjCP5iZwWmbUNHmASlFCP5Cx4M → on that product’s Heading 2 line (e.g. `cvtolak.id`), prefix ✅ (or append ` — DONE (site-factory)`). Do not delete research bullets. If Docs edit fails, report it but still finish the repo work.
 5. REQUIRED — commit AND push before finishing:
    - Stage APP_DIR + site-factory/BACKLOG.md + site-factory/PLAYBOOK.md (and any related files).
    - Commit with message like: `feat(site-factory): add <FOLDER_NAME> unlock app`.
-   - Push to the remote sabave-ai branch this automation is on (create a PR only if the environment requires it; otherwise push the working branch).
+   - Push to the remote sabave-ai branch this automation is on.
    - Do not end the run with uncommitted or unpushed work. If push fails, report the error and retry once.
-6. Print LOCAL DEPLOY HANDOFF PROMPT filled for THIS FOLDER_NAME. Do NOT deploy Firebase.
+6. REQUIRED — write LOCAL DEPLOY HANDOFF into the prompts/handoffs Doc (see below). Also print it in your reply. Do NOT deploy Firebase.
 
 ═══════════════════════════════════════
-LOCAL DEPLOY HANDOFF PROMPT (fill FOLDER_NAME / domain / URLs for the claimed idea)
+LOCAL DEPLOY HANDOFF → prompts Doc (REQUIRED)
 ═══════════════════════════════════════
-Print a copy-paste block:
+Purpose: the human copies from this Doc into a local IDE. Do not leave the handoff only in chat.
+
+Google Doc documentId: 1laiFvg5tSKXXERaDpWs-J4YCAHQPITa0xatM_gb7zec
+- Upsert HEADING_1 whose exact text is PRODUCT_DOMAIN (e.g. `cvtolak.id`).
+- Replace the body under that heading with the filled handoff below (handoff text ONLY — no factory build prompt).
+- If the heading already exists, update its following body; do not duplicate headings.
+- Local path MUST be C:\FOLDER_NAME. NEVER C:\sabave-ai\FOLDER_NAME.
+
+Filled handoff body:
 
 You are deploying a Think Era Labs product on my Windows machine.
 Repo remote: sabave-ai · App folder name: <FOLDER_NAME>
@@ -98,5 +108,5 @@ Do not copy other product folders.
 ═══════════════════════════════════════
 DONE
 ═══════════════════════════════════════
-Reply with: CLAIMED name, APP_DIR path, BACKLOG.md [x] + Google Doc ✅ confirmation, build result, commit SHA + push confirmation (branch/URL), handoff prompt.
+Reply with: CLAIMED name, APP_DIR path, BACKLOG.md [x] + research Doc ✅ confirmation, prompts/handoffs Doc section updated (PRODUCT_DOMAIN), build result, commit SHA + push confirmation, and the same handoff text.
 If backlog was already all done, say so and create nothing.
