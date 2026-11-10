@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  background-color: #f3ecdf;
+  background-image:
+    radial-gradient(circle at 12% -10%, rgba(212, 137, 42, 0.18), transparent 42%),
+    linear-gradient(180deg, rgba(255, 250, 242, 0.7), rgba(243, 236, 223, 0) 280px);
+  min-height: 100vh;
+}
+
+::selection {
+  background: #f0d7a4;
+}
+
+.ink-ring {
+  box-shadow: inset 0 0 0 1px #e2d6c3;
+}
