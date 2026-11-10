@@ -11,9 +11,10 @@ STEP 0 — CLAIM NEXT IDEA (do this first, every run)
 ═══════════════════════════════════════
 Sources:
 1) Google Doc: documentId 10Vn05ZtE37XCLKSzmwjCP5iZwWmbUNHmASlFCP5Cx4M
-   Tabs: Intro, Professionals, Students & Parents. Heading 2 site names are ideas (e.g. interviewdebrief.id → folder interviewdebrief).
+   Tabs: Intro, Professionals, Students & Parents, Love & Relationships. Heading 2 site names are ideas (e.g. interviewdebrief.id → folder interviewdebrief).
+   Optional filled long prompts (local paste): documentId 1laiFvg5tSKXXERaDpWs-J4YCAHQPITa0xatM_gb7zec — one HEADING_1 per website.
 2) Backlog file in sabave-ai: site-factory/BACKLOG.md
-   If missing, create it with a checklist of every Heading-2 product from Professionals + Students & Parents, format:
+   If missing, create it with a checklist of every Heading-2 product from Professionals + Students & Parents + Love & Relationships, format:
    - [ ] interviewdebrief
    - [ ] cvtolak
    … (FOLDER_NAME only, no .id)
@@ -80,11 +81,12 @@ LOCAL DEPLOY HANDOFF PROMPT (fill FOLDER_NAME / domain / URLs for the claimed id
 Print a copy-paste block:
 
 You are deploying a Think Era Labs product on my Windows machine.
-Repo: sabave-ai · App folder: <FOLDER_NAME>
-Local: C:\sabave-ai\<FOLDER_NAME>
+Repo remote: sabave-ai · App folder name: <FOLDER_NAME>
+Local working directory (REQUIRED): C:\<FOLDER_NAME>
+Do NOT use C:\sabave-ai\<FOLDER_NAME>. Do NOT nest under the sabave-ai clone. Work at the drive root only: cd C:\<FOLDER_NAME>
 Firebase: skoolnow-ea6ff · Hosting site: <FOLDER_NAME> · URL: https://<FOLDER_NAME>.web.app
 Firebase CLI already logged in.
-1. cd that folder · npm install && npm run build
+1. cd C:\<FOLDER_NAME> · npm install && npm run build
 2. firebase use skoolnow-ea6ff
 3. hosting:sites:create <FOLDER_NAME> (suffix if needed); wire only this app’s firebase targets
 4. Firestore DB <FOLDER_NAME> asia-southeast1 if missing
