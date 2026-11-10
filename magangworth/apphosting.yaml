@@ -1,0 +1,36 @@
+# Firebase App Hosting — cost caps for this product only.
+# Region is selected when the backend is created: asia-southeast1.
+# Secrets (Midtrans, Firebase private key, optional DeepSeek) belong in
+# App Hosting secret env, not in this file.
+
+runConfig:
+  minInstances: 0
+  maxInstances: 3
+  concurrency: 40
+  cpu: 1
+  memoryMiB: 512
+
+env:
+  - variable: FIREBASE_PROJECT_ID
+    value: skoolnow-ea6ff
+    availability:
+      - BUILD
+      - RUNTIME
+  - variable: FIRESTORE_DATABASE_ID
+    value: magangworth
+    availability:
+      - RUNTIME
+  - variable: NEXT_PUBLIC_SITE_URL
+    value: https://magangworth.web.app
+    availability:
+      - BUILD
+      - RUNTIME
+  - variable: MIDTRANS_IS_PRODUCTION
+    value: "false"
+    availability:
+      - RUNTIME
+  - variable: NEXT_PUBLIC_MIDTRANS_IS_PRODUCTION
+    value: "false"
+    availability:
+      - BUILD
+      - RUNTIME
