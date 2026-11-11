@@ -1,0 +1,19 @@
+{
+  "firestore": {
+    "database": "rppcepet",
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "hosting": {
+    "target": "rppcepet",
+    "source": ".",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "frameworksBackend": {
+      "region": "asia-southeast1",
+      "memory": "512MiB",
+      "cpu": 1,
+      "minInstances": 0,
+      "maxInstances": 3
+    }
+  }
+}

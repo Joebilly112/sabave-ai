@@ -1,0 +1,29 @@
+# Cloud Run cost caps for this backend only.
+scripts:
+  buildCommand: npm run build
+  runCommand: npm run start
+
+runConfig:
+  cpu: 1
+  memoryMiB: 512
+  minInstances: 0
+  maxInstances: 3
+  concurrency: 80
+
+env:
+  - variable: FIREBASE_PROJECT_ID
+    value: skoolnow-ea6ff
+  - variable: FIRESTORE_DATABASE_ID
+    value: rppcepet
+  - variable: PRIMARY_PUBLIC_URL
+    value: https://rppcepet.web.app
+  - variable: MIDTRANS_IS_PRODUCTION
+    value: "false"
+    availability:
+      - BUILD
+      - RUNTIME
+  - variable: NEXT_PUBLIC_MIDTRANS_IS_PRODUCTION
+    value: "false"
+    availability:
+      - BUILD
+      - RUNTIME
