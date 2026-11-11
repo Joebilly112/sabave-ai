@@ -1,0 +1,19 @@
+# Firebase App Hosting — naikpangkat only.
+# Region for the backend is asia-southeast1 (set when the backend is created).
+runConfig:
+  minInstances: 0
+  maxInstances: 3
+  concurrency: 80
+  cpu: 1
+  memoryMiB: 512
+
+env:
+  - variable: FIREBASE_PROJECT_ID
+    value: skoolnow-ea6ff
+    availability:
+      - BUILD
+      - RUNTIME
+  - variable: FIRESTORE_DATABASE_ID
+    value: naikpangkat
+    availability:
+      - RUNTIME

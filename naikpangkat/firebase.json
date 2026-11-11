@@ -1,0 +1,27 @@
+{
+  "hosting": {
+    "target": "naikpangkat",
+    "source": ".",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "frameworksBackend": {
+      "region": "asia-southeast1",
+      "cpu": 1,
+      "memory": "512MiB",
+      "minInstances": 0,
+      "maxInstances": 3,
+      "concurrency": 80
+    }
+  },
+  "firestore": [
+    {
+      "database": "naikpangkat",
+      "rules": "firestore.rules",
+      "indexes": "firestore.indexes.json"
+    }
+  ],
+  "apphosting": {
+    "backendId": "naikpangkat",
+    "rootDir": ".",
+    "ignore": ["node_modules", ".git", "firebase-debug.log", "firebase-debug.*.log"]
+  }
+}
