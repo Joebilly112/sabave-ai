@@ -1,0 +1,41 @@
+# Site factory backlog
+
+Heading 2 products from the research doc, top to bottom: Professionals, then Students & Parents, then Love & Relationships. Folder name only. An item is done when this box is checked, the app folder already has a Next.js `package.json`, or the research heading is marked DONE.
+
+- [x] interviewdebrief
+- [x] cvtolak
+- [x] magangworth
+- [x] clientghost
+- [x] pajakkugak
+- [x] burnoutdulu
+- [x] shiftrusak
+- [x] strhabis
+- [x] pelatihanmana — 2026-11-11 cloud build finished
+- [ ] rppcepet
+- [ ] ppgsiap
+- [ ] naikpangkat
+- [ ] akunsuspend
+- [ ] ratingturun
+- [ ] praktiksiap
+- [ ] sipbhabis
+- [ ] oncallbidan
+- [ ] tawaranaman
+- [ ] jauhanak
+- [ ] bertahangak
+- [ ] ngekosgak
+- [ ] capekdijalan
+- [ ] fleksidong
+- [ ] diperpanjanggak
+- [ ] kontrakhabis
+- [ ] diangkatgak
+- [ ] skripsibuntu
+- [ ] orgkomit
+- [ ] pilihmagang
+- [ ] sekolahmana
+- [ ] prbanyak
+- [ ] lesworth
+- [ ] diasukagak
+- [ ] nembakdulu
+- [ ] statusapa
+- [ ] gamondulu
+- [ ] siapanih
