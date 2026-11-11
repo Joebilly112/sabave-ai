@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background:
+    radial-gradient(900px 420px at 90% -10%, rgba(227, 154, 58, 0.18), transparent 55%),
+    radial-gradient(700px 380px at -10% 0%, rgba(109, 77, 134, 0.16), transparent 50%),
+    #fbf6ef;
+  color: #241c33;
+}

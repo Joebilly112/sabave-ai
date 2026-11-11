@@ -1,0 +1,12 @@
+{
+  "projects": {
+    "default": "skoolnow-ea6ff"
+  },
+  "targets": {
+    "skoolnow-ea6ff": {
+      "hosting": {
+        "jauhanak": ["jauhanak"]
+      }
+    }
+  }
+}
