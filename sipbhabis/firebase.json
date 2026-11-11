@@ -1,0 +1,20 @@
+{
+  "firestore": {
+    "database": "sipbhabis",
+    "location": "asia-southeast1",
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "hosting": {
+    "target": "sipbhabis",
+    "source": ".",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "frameworksBackend": {
+      "region": "asia-southeast1",
+      "minInstances": 0,
+      "maxInstances": 3,
+      "memory": "512MiB",
+      "cpu": 1
+    }
+  }
+}
