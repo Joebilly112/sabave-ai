@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  background:
+    radial-gradient(820px 380px at 100% -10%, rgba(15, 110, 106, 0.16), transparent 55%),
+    radial-gradient(640px 320px at -10% 10%, rgba(194, 65, 12, 0.08), transparent 50%),
+    repeating-linear-gradient(-12deg, transparent, transparent 18px, rgba(18, 32, 51, 0.015) 18px, rgba(18, 32, 51, 0.015) 19px),
+    #e7efec;
+  color: #122033;
+  min-height: 100vh;
+}
+
+::selection {
+  background: #b7ddd8;
+}
+
+.locked-line {
+  filter: blur(5px);
+  user-select: none;
+}
